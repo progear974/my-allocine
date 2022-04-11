@@ -1,0 +1,146 @@
+main {
+  object-fit: contain;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.content_container {
+  background-color: black;
+  width: 100%;
+}
+
+.information_container {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.information_container_container {
+  //background-color: beige;
+  //padding: 3rem;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
+  //font-size: 1.5rem;
+  //font-weight: bold;
+  //color: black;
+}
+
+.flex__container {
+  display: flex;
+}
+
+.flex_row {
+  flex-direction: row;
+}
+
+.flex_column {
+  flex-direction: column;
+}
+
+.flex__center {
+  justify-content: center;
+  align-items: center;
+}
+
+.first_block {
+  height: 500px;
+  color: white;
+}
+
+.container-block-image {
+  height: 10rem;
+}
+
+.fifty {
+  width: 50%;
+}
+
+.hundred {
+  width: 100%;
+}
+
+.faq {
+  margin-top: 1rem;
+}
+
+.hero-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 1.5rem;
+  row-gap: 40px;
+  font-weight: bold;
+  min-height: 500px;
+}
+
+.main-container {
+  display: flex;
+  width: 280px;
+  height: 400px;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+.poster-container {
+  width: 250px;
+  height: 350px;
+  //padding: 12px;
+  //position: relative;
+  //z-index: 9999;
+}
+
+.poster {
+  transition: transform 450ms;
+}
+
+.poster:hover {
+  transform: scale(1.08);
+}
+
+
+.ticket-container {
+  display: flex;
+  //flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //position: absolute;
+}
+
+.ticket__content {
+  //width: 100%;
+  //position: absolute;
+  //bottom: 0;
+  text-align: center;
+}
+
+.ticket__movie-title {
+  //text-transform: uppercase;
+  //margin-bottom: 5px;
+  //color: black;
+}
+
+.filter_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #B0413E;
+  flex-basis: 15%;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+}
+
+
+.info_page {
+  background-color: beige;
+  padding: 1.5rem;
+  font-family: Lobster, display;
+}

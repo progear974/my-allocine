@@ -1,0 +1,14 @@
+{% extends 'home/dashboard_base.html.twig' %}
+
+{% block filter %}
+
+{% endblock %}
+
+{% block herocontainer %}
+    <ul>
+        <li><a href="{{ path("create-playlist") }}">Créer une playlist</a></li>
+        {% for playlist in data %}
+            <li><a href="{{ path("my-playlist", {id: playlist["id"]}) }}">{{ playlist["name"] }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

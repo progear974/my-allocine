@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('dashboard') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('dashboard') }}
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% block filter %}
+            <div class="filter_container">
+                <h1>Filtre</h1>
+                {{ form_start(form) }}
+                {{ form_row(form.genres) }}
+                {{ form_row(form.years) }}
+                {{ form_row(form.languages) }}
+                {{ form_end(form) }}
+            </div>
+        {% endblock %}
+        <div class="content_container">
+            <div class="info_page">
+                <h2 style="color: black; font-family: Lobster, display;">{{ title_page }}</h2>
+            </div>
+            <div class="hero-container">
+                {% block herocontainer %}
+                    {% if movieList|length > 0 %}
+                        {% for movie in movieList %}
+                            <a href="{{ path('app_detail_movie', {id: movie["id"]}) }}" target="_blank">
+                                <div class="main-container">
+                                    <div class="poster-container">
+                                        <img src="https://image.tmdb.org/t/p/w500/{{ movie["poster_path"] }}" class="poster" />
+                                    </div>
+                                    <div class="ticket-container">
+                                        <div class="ticket__content">
+                                            <p style="color: white; font-size: 1.2rem; margin-top: 10px" class="ticket__movie-title">{{ movie["title"] }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <p style="color: white">Nous n'avons aucun films correspondant à ces critères</p>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

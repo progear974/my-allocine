@@ -1,0 +1,26 @@
+{#{% block nav %}#}
+{#    <header class="u-black u-clearfix u-header u-header" id="sec-23e0">#}
+{#        <div class="u-clearfix u-sheet u-sheet-1">#}
+{#            <a href="{{ path("app_home") }}" class="u-border-2 u-border-palette-4-base u-image u-logo u-image-1" data-image-width="337" data-image-height="121">#}
+{#                <img src="{{ asset('build/images/a370cf8cf05592ab21d9c715f18a8b70.png') }}" class="u-logo-image u-logo-image-1">#}
+{#            </a>#}
+{#            <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-2-base u-radius-10 u-btn-1">S'identifier</a>#}
+{#        </div>#}
+{#    </header>#}
+{#    <nav class="navbar">#}
+{#        <div class="navbar__left">#}
+{#            <div class="logo_container">#}
+{#                <img src="{{ asset('build/images/logo.png') }}"/>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="navbar__right">#}
+{#            <div>#}
+{#                {% if is_granted('ROLE_USER') %}#}
+{#                    <a class="button-64" href="{{ path("app_logout") }}"><span class="text">Logout</span></a>#}
+{#                {% else %}#}
+{#                    <a class="button-64" href="{{ path("app_login") }}"><span class="text">Login</span></a>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+{#{% endblock %}#}

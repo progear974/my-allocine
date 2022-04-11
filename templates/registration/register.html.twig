@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('login') }}
+{% endblock %}
+
+{% block content %}
+    <section class="u-clearfix u-image u-section-1" id="sec-d242" data-image-width="1280" data-image-height="720">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-black u-container-style u-group u-opacity u-opacity-45 u-shape-rectangle u-group-1">
+                <div class="u-container-layout u-container-layout-1">
+                    <div class="u-expanded-width u-form u-form-1">
+                        <h2 class="u-custom-font u-font-oswald u-text u-text-1">Création de compte</h2>
+                        {{ form_start(registrationForm, {'attr': {
+                            "class":"u-clearfix u-form-spacing-26 u-inner-form",
+                            "style":"padding: 32px;"
+                        }}) }}
+                            <div class="u-form-group u-form-name">
+                                <label for="name-b0ab" class="u-label">Email</label>
+                                {{ form_widget(registrationForm.email, {'attr': {
+                                    "placeholder": "Entrer votre email",
+                                    "id": "name-b0ab",
+                                    "name": "email",
+                                    "class": "u-border-1 u-border-grey-30 u-input u-input-rectangle u-white",
+                                    "autocomplete": "email",
+                                    "required":"",
+                                    "autofocus":""
+                                }}) }}
+                            </div>
+                            <div class="u-form-email u-form-group">
+                                <label for="email-b0ab" class="u-label">Mot de passe</label>
+                                {{ form_widget(registrationForm.plainPassword, {'attr': {
+                                    "placeholder":"Entrer votre mot de passe",
+                                    "id":"email-b0ab",
+                                    "name":"password",
+                                    "class":"u-border-1 u-border-grey-30 u-input u-input-rectangle u-white",
+                                    "required":""
+                                }}) }}
+    {#                            <input type="password" placeholder="Entrer votre mot de passe" id="email-b0ab" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>#}
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <div class="u-align-center u-form-group u-form-submit">
+                                <button type="submit" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-2-base u-radius-9 u-btn-1">
+                                    Créer un compte
+                                </button>
+                            </div>
+    {#                    </form>#}
+                        {{ form_end(registrationForm) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

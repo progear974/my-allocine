@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  {{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  {{ encore_entry_script_tags('login') }}
+{% endblock %}
+
+{% block content %}
+    <section class="u-clearfix u-image u-section-1" id="sec-d242" data-image-width="1280" data-image-height="720">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-black u-container-style u-group u-opacity u-opacity-45 u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="u-expanded-width u-form u-form-1">
+              <h2 class="u-custom-font u-font-oswald u-text u-text-1">S'identifier</h2>
+              <form method="POST" class="u-clearfix u-form-spacing-26 u-inner-form" style="padding: 25px;">
+                {% if error %}
+                  <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                {% if app.user %}
+                  <div class="mb-3">You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></div>
+                {% endif %}
+                <div class="u-form-group u-form-name">
+                  <label for="name-b0ab" class="u-label">Email</label>
+                  <input type="email" placeholder="Entrer votre email" value="{{ last_username }}" id="name-b0ab" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" autocomplete="email" required autofocus>
+                </div>
+                <div class="u-form-email u-form-group">
+                  <label for="email-b0ab" class="u-label">Mot de passe</label>
+                  <input type="password" placeholder="Entrer votre mot de passe" id="email-b0ab" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required>
+                </div>
+                <label>
+                  <input type="checkbox" name="_remember_me" class="form-check-input"> Se souvenir de moi
+                </label>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="u-align-center u-form-group u-form-submit">
+                  <button type="submit" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-2-base u-radius-9 u-btn-1">
+                    S'identifier
+                  </button>
+                </div>
+              </form>
+              <a href="{{ path("app_register") }}" class="u-border-active-palette-2-base u-border-hover-palette-2-base u-border-none u-btn u-button-style u-custom-font u-font-open-sans u-none u-text-hover-palette-2-base u-text-palette-2-base u-btn-2">Pas de compte ?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <main>
+        <div class="information_container">
+            <div class="information_container_container">
+                <p>
+                    Unlimited movies, TV shows, and more.
+                </p>
+                <p>
+                    Watch anywhere. Cancel anytime.
+                </p>
+                <p>
+                    Ready to watch? Enter your email to create or restart your membership.
+                </p>
+            </div>
+        </div>
+        {# Retrouver les films du moments #}
+        <div class="flex__container flex__row first_block hundred flex__center">
+{#            left #}
+            <div class="flex__container flex__center fifty">
+{#                content#}
+                <div class="flex__container flex_column">
+                    <h3>Retrouver les films qui vous correspondent</h3>
+                    <p>Retrouver les films du moment de votre genre favoris</p>
+                </div>
+
+            </div>
+{#            right#}
+            <div class="fifty">
+                <div class="container-block-image">
+                    <img src="{{ asset("build/images/cool-background.png") }}">
+                </div>
+            </div>
+        </div>
+        <div class="flex__container flex__row first_block hundred flex__center">
+            {#            left #}
+            <div class="fifty">
+                <div class="container-block-image">
+                    <img src="{{ asset("build/images/cool-background.png") }}">
+                </div>
+            </div>
+
+            {#            right#}
+            <div class="flex__container flex__center fifty">
+                {#                content#}
+                <div class="flex__container flex_column">
+                    <h3>Retrouver les films qui vous correspondent</h3>
+                    <p>Retrouver les films du moment de votre genre favoris</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex__container flex_column flex__center">
+            <h2>Foire à question</h2>
+            <ul class="faq">
+                <li>What is NeoMovie ?</li>
+                <p>NeoMovie est un service de recherche de films à la demande</p>
+                <li>How much does NeoMovie cost ?</li>
+                <p>NeoMovie est totalement gratuit, il suffit de s'inscrire</p>
+                <li>What can I search on Neomovie ?</li>
+                <p>NeoMovie est spécialisé dans les films</p>
+                <li>Is Neomovie contains kids films ?</li>
+                <p>Bien sur !</p>
+            </ul>
+        </div>
+    </main>
+{% endblock %}
